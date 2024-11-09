@@ -1,5 +1,9 @@
 import React from 'react'
 import TaskForm from './components/TaskForm'
+import TaskColumn from './components/TaskColumn'
+import todoIcon from "./assets/direct-hit.png"
+import doingIcon from "./assets/glowing-star.png"
+import doneIcon from "./assets/check-mark-button.png"
 
 const App = () => {
   return (
@@ -7,9 +11,9 @@ const App = () => {
       <div className='app' >
         <TaskForm />
         <main className='appMain flex flex-row justify-evenly py-[20px] px-[8%]' >
-          <section className='taskColumn w-1/3 bg-red-700 m-[20px]' >Section 1</section>
-          <section className='taskColumn w-1/3 bg-red-700 m-[20px]' >Section 2</section>
-          <section className='taskColumn w-1/3 bg-red-700 m-[20px]' >Section 3</section>
+          <TaskColumn icon={todoIcon} columnTitle = "To Do" />
+          <TaskColumn icon={doingIcon} columnTitle = "Doing" />
+          <TaskColumn icon={doneIcon} columnTitle = "Done" />
         </main>
       </div>
     </>
