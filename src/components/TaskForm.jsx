@@ -54,13 +54,13 @@ const TaskForm = ({setTasks}) => {
                         <Tag tagName="Exam Preparation" tagHandler={tagHandler} selected={tagChecker("Exam Preparation")} />
                         <Tag tagName="Self Study" tagHandler={tagHandler} selected={tagChecker("Self Study")} />
                     </div>
-                    <div className='flex flex-wrap'>
+                    <div className='flex gap-2.5 flex-wrap'>
                         <select onChange={changeHandler} className='taskStatus text-base font-medium border-[1px] border-[#999] rounded w-[120px] h-[40px] px-1' name="status" value={taskData.status} id="">
                             <option value="todo">To Do</option>
                             <option value="doing">Doing</option>
                             <option value="done">Done</option>
                         </select>
-                        <button type='submit' className='taskSubmit text-base font-medium bg-[#6457f9] text-[#fff] rounded h-[40px] py-1 px-3 ml-2.5 border-none cursor-pointer ' >+ Add Task</button>
+                        <button type='submit' className='taskSubmit text-base font-medium bg-[#6457f9] text-[#fff] rounded h-[40px] py-1 px-3 border-none cursor-pointer ' >+ Add Task</button>
                     </div>
                 </div>
             </form>
