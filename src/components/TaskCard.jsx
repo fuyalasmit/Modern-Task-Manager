@@ -2,15 +2,15 @@ import React from 'react'
 import Tag from './Tag'
 import deleteIcon from '../assets/delete.png'
 
-const TaskCard = ({title,tags, deleteHandler, index}) => {
+const TaskCard = ({ title, tags, deleteHandler, index, setActiveCard }) => {
     return (
-        <article className='taskCard w-full h-auto border-[1px] border-[#dcdcdc] rounded-lg p-3.5 my-3.5' >
+        <article className='taskCard w-full h-auto border-[1px] border-[#dcdcdc] rounded-lg p-3.5 mb-3.5 cursor-grab' draggable onDragStart={() => setActiveCard(index)} onDragEnd={() => setActiveCard(null)} >
             <p className='taskText font-semibold text-lg mb-3.5 ' >{title}</p>
             <div className='taskCardBottomLine flex items-center justify-between '>
                 <div className="taskCardTags flex gap-2 flex-wrap">
                     {
-                        tags.map((value,index)=>{
-                           return <Tag key={index} tagName={value} selected />
+                        tags.map((value, index) => {
+                            return <Tag key={index} tagName={value} selected />
                         })
                     }
                 </div>
